@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Author</title>
+    <link rel="stylesheet" href="{% static 'library/styles.css' %}">
+</head>
+<body>
+    {% include 'library/_navbar.html' %}
+
+    <h2>Add Author</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Author</button>
+    </form>
+    <a href="{% url 'list_authors' %}">View All Authors</a>
+</body>
+</html>
